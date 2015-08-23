@@ -14,5 +14,4 @@ public interface IScheduleDao {
     Schedule getDaySchedule(Course course,Group group, Long weekDay) throws DaoException;
     void updateWeekSchedule(List<Schedule> scheduleList) throws DaoException;
     void updateDaySchedule(Schedule schedule) throws DaoException;
-   // void editDaySchedule(Schedule schedule) throws DaoException;
 }

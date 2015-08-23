@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import javax.validation.Valid;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "Subjects")
@@ -23,6 +24,9 @@ public class Subject implements Serializable{
     @Length(max=100)
     private String subjectName;
 
+    @Column(name="SUBJECT_TIME")
+    private Timestamp subjectTime;
+
     @ManyToOne
     @JoinColumn(name = "CABINET_ID", nullable = false)
     @Valid
@@ -37,6 +41,14 @@ public class Subject implements Serializable{
     @JoinColumn(name="SCHEDULE_ID",nullable = false)
     @Valid
     private Schedule schedule;
+
+    public Timestamp getSubjectTime() {
+        return subjectTime;
+    }
+
+    public void setSubjectTime(Timestamp subjectTime) {
+        this.subjectTime = subjectTime;
+    }
 
     public Long getSubjectId() {
         return subjectId;

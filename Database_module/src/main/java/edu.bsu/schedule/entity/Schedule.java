@@ -20,6 +20,9 @@ public class Schedule implements Serializable{
     @Column(name="SCHEDULE_ID")
     private Long scheduleId;
 
+    /**
+     * Weekday index. From 1 to 7. Start with sunday (1 - sunday, 2 - monday ...)
+     */
     @Column(name="WEEKDAY")
     @NotBlank
     @Min(1)
@@ -37,6 +40,7 @@ public class Schedule implements Serializable{
     private Group group;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "schedule")
+    @OrderBy(value = "subjectTime ASC")
     private List<Subject> subjects;
 
     public Long getScheduleId() {

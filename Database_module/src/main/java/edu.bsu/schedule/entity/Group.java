@@ -9,12 +9,7 @@ import java.util.List;
 
 
 
-/*create table Groups (
-        GROUP_ID number(20) NOT NULL,
-        GROUP_INDEX nvarchar2(10) NOT NULL,
-        GROUP_NAME nvarchar2(40),
-        PRIMARY KEY (GROUP_ID)
-        );*/
+
 
 @Entity
 @Table(name = "Groups")

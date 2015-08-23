@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <Courses COURSE_ID="1"/>
+    <Groups GROUP_ID="1" GROUP_INDEX="9" GROUP_NAME="Computer security"/>
+    <Cabinets CABINET_ID="1" CABINET="256a"/>
+    <Teachers TEACHER_ID="1" NAME="Konah"/>
+
+    <Schedules SCHEDULE_ID="1" COURSE_ID="1" GROUP_ID="1" WEEKDAY="1"/>
+    <Schedules SCHEDULE_ID="2" COURSE_ID="1" GROUP_ID="1" WEEKDAY="2"/>
+    <Schedules SCHEDULE_ID="3" COURSE_ID="1" GROUP_ID="1" WEEKDAY="3"/>
+    <Schedules SCHEDULE_ID="4" COURSE_ID="1" GROUP_ID="1" WEEKDAY="4"/>
+    <Schedules SCHEDULE_ID="5" COURSE_ID="1" GROUP_ID="1" WEEKDAY="5"/>
+    <Schedules SCHEDULE_ID="6" COURSE_ID="1" GROUP_ID="1" WEEKDAY="6"/>
+    <Schedules SCHEDULE_ID="7" COURSE_ID="1" GROUP_ID="1" WEEKDAY="7"/>
+
+
+
+    <Subjects SUBJECT_ID="1" NAME="Subject1 day1" SUBJECT_TIME="0001-01-01 08:15:00"
+            CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="1"/>
+    <Subjects SUBJECT_ID="2" NAME="Subject2 day1" SUBJECT_TIME="0001-01-01 09:45:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="1"/>
+
+    <Subjects SUBJECT_ID="3" NAME="Subject1 day2" SUBJECT_TIME="0001-01-01 08:15:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="2"/>
+    <Subjects SUBJECT_ID="4" NAME="Subject2 day2" SUBJECT_TIME="0001-01-01 09:45:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="2"/>
+
+    <Subjects SUBJECT_ID="5" NAME="Subject1 day3" SUBJECT_TIME="0001-01-01 08:15:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="3"/>
+    <Subjects SUBJECT_ID="6" NAME="Subject2 day3" SUBJECT_TIME="0001-01-01 09:45:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="3"/>
+
+    <Subjects SUBJECT_ID="7" NAME="Subject1 day4" SUBJECT_TIME="0001-01-01 08:15:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="4"/>
+    <Subjects SUBJECT_ID="8" NAME="Subject2 day4" SUBJECT_TIME="0001-01-01 09:45:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="4"/>
+
+    <Subjects SUBJECT_ID="9" NAME="Subject1 day5" SUBJECT_TIME="0001-01-01 08:15:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="5"/>
+    <Subjects SUBJECT_ID="10" NAME="Subject2 day5" SUBJECT_TIME="0001-01-01 09:45:00"
+              CABINET_ID="1" TEACHER_ID="1" SCHEDULE_ID="5"/>
+
+
+
+</dataset>

@@ -1,4 +1,7 @@
 package edu.bsu.schedule.databasemodule.dao;
 
-public class IGroupDao {
+import edu.bsu.schedule.databasemodule.entity.orm.Group;
+
+public interface IGroupDao {
+    Group getGroupByIndex(String groupIndex) throws DaoException;
 }

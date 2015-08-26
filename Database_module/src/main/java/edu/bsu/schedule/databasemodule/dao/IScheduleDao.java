@@ -1,8 +1,8 @@
 package edu.bsu.schedule.databasemodule.dao;
 
-import edu.bsu.schedule.databasemodule.entity.Course;
-import edu.bsu.schedule.databasemodule.entity.Group;
-import edu.bsu.schedule.databasemodule.entity.Schedule;
+import edu.bsu.schedule.databasemodule.entity.orm.Course;
+import edu.bsu.schedule.databasemodule.entity.orm.Group;
+import edu.bsu.schedule.databasemodule.entity.orm.Schedule;
 
 import java.util.List;
 

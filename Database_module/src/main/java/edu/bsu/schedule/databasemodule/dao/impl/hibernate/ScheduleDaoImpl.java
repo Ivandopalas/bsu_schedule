@@ -2,9 +2,9 @@ package edu.bsu.schedule.databasemodule.dao.impl.hibernate;
 
 import edu.bsu.schedule.databasemodule.dao.DaoException;
 import edu.bsu.schedule.databasemodule.dao.IScheduleDao;
-import edu.bsu.schedule.databasemodule.entity.Course;
-import edu.bsu.schedule.databasemodule.entity.Group;
-import edu.bsu.schedule.databasemodule.entity.Schedule;
+import edu.bsu.schedule.databasemodule.entity.orm.Course;
+import edu.bsu.schedule.databasemodule.entity.orm.Group;
+import edu.bsu.schedule.databasemodule.entity.orm.Schedule;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -45,7 +45,6 @@ public class ScheduleDaoImpl implements IScheduleDao{
                     .add(Restrictions.eq("course", course))
                     .add(Restrictions.eq("group", group))
                     .add(Restrictions.eq("weekday",weekDay))
-                    .addOrder(Order.asc("weekday"))
                     .uniqueResult();
             return schedule;
         }catch(HibernateException ex){

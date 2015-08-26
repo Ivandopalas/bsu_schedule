@@ -2,7 +2,7 @@ package edu.bsu.schedule.databasemodule.dao.impl.hibernate;
 
 import edu.bsu.schedule.databasemodule.dao.DaoException;
 import edu.bsu.schedule.databasemodule.dao.ICabinetDao;
-import edu.bsu.schedule.databasemodule.entity.Cabinet;
+import edu.bsu.schedule.databasemodule.entity.orm.Cabinet;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

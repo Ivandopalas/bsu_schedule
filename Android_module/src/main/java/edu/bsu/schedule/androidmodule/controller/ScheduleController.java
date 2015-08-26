@@ -1,8 +1,7 @@
 package edu.bsu.schedule.androidmodule.controller;
 
-import edu.bsu.schedule.androidmodule.entity.DayScheduleWrapper;
 import edu.bsu.schedule.androidmodule.entity.WeekScheduleWrapper;
-import edu.bsu.schedule.databasemodule.entity.Schedule;
+import edu.bsu.schedule.databasemodule.entity.vo.ScheduleVO;
 import edu.bsu.schedule.databasemodule.service.IScheduleService;
 import edu.bsu.schedule.databasemodule.service.ServiceException;
 import org.apache.logging.log4j.LogManager;
@@ -28,17 +27,18 @@ public class ScheduleController {
     private IScheduleService scheduleService;
 
     @RequestMapping(
-            value="/weekSchedule/{course}/{group}",
+            value="/getSchedule/{course}/{group}",
             produces = "application/json",
             method = RequestMethod.GET
     )
     public @ResponseBody ResponseEntity<WeekScheduleWrapper> getWeekSchedule(
-            @PathVariable("course") Long course,@PathVariable("group") String group) {
+            @PathVariable("course") Long course,
+            @PathVariable("group") String group) {
         WeekScheduleWrapper weekSchedule = new WeekScheduleWrapper();
         try {
-            List<Schedule> scheduleList = scheduleService.getWeekSchedule(course,group);
-            if(scheduleList != null){
-                weekSchedule.setScheduleList(scheduleList);
+            List<ScheduleVO> scheduleVOList = scheduleService.getWeekScheduleVO(course, group);
+            if(scheduleVOList != null){
+                weekSchedule.setScheduleList(scheduleVOList);
             }
         } catch (ServiceException ex) {
             logger.error(ex);
@@ -49,22 +49,25 @@ public class ScheduleController {
         ResponseEntity<WeekScheduleWrapper> response = new ResponseEntity<WeekScheduleWrapper>(weekSchedule,HttpStatus.OK);
         return response;
     }
-    @RequestMapping(value="/weekSchedule/{course}/{group}/{weekday}",  produces = "application/json", method = RequestMethod.GET)
-    public @ResponseBody ResponseEntity<DayScheduleWrapper> getDaySchedule(
-            @PathVariable("course") Long course,@PathVariable("group") String group,@PathVariable("weekday") Long weekDay) {
-        DayScheduleWrapper daySchedule = new DayScheduleWrapper();
+    @RequestMapping(
+            value="/getSchedule/{course}/{group}/{weekday}",
+            produces = "application/json",
+            method = RequestMethod.GET
+    )
+    public @ResponseBody ResponseEntity<ScheduleVO> getDaySchedule(
+            @PathVariable("course") Long course,
+            @PathVariable("group") String group,
+            @PathVariable("weekday") Long weekDay) {
         try {
-            Schedule schedule = scheduleService.getDaySchedule(course, group, weekDay);
-            if(schedule != null){
-                daySchedule.setSchedule(schedule);
-            }
+            ScheduleVO schedule = scheduleService.getDayScheduleVO(course, group, weekDay);
+            ResponseEntity<ScheduleVO> response = new ResponseEntity<ScheduleVO>(schedule,HttpStatus.OK);
+            return response;
         } catch (ServiceException ex) {
             logger.error(ex);
-            ResponseEntity<DayScheduleWrapper> errorResponse =
-                    new ResponseEntity<DayScheduleWrapper>(HttpStatus.INTERNAL_SERVER_ERROR);
+            ResponseEntity<ScheduleVO> errorResponse =
+                    new ResponseEntity<ScheduleVO>(HttpStatus.INTERNAL_SERVER_ERROR);
             return errorResponse;
         }
-        ResponseEntity<DayScheduleWrapper> response = new ResponseEntity<DayScheduleWrapper>(daySchedule,HttpStatus.OK);
-        return response;
+
     }
 }

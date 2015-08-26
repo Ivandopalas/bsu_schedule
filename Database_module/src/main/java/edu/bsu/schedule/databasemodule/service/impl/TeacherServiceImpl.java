@@ -2,7 +2,7 @@ package edu.bsu.schedule.databasemodule.service.impl;
 
 import edu.bsu.schedule.databasemodule.dao.DaoException;
 import edu.bsu.schedule.databasemodule.dao.ITeacherDao;
-import edu.bsu.schedule.databasemodule.entity.Teacher;
+import edu.bsu.schedule.databasemodule.entity.orm.Teacher;
 import edu.bsu.schedule.databasemodule.service.ServiceException;
 import edu.bsu.schedule.databasemodule.service.ITeacherService;
 import org.springframework.beans.factory.annotation.Autowired;

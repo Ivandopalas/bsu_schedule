@@ -1,6 +1,6 @@
 package edu.bsu.schedule.databasemodule.service;
 
-import edu.bsu.schedule.databasemodule.entity.Teacher;
+import edu.bsu.schedule.databasemodule.entity.orm.Teacher;
 
 import java.util.List;
 

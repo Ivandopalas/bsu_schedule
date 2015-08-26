@@ -21,8 +21,12 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({"classpath:config/databaseConfig.properties","classpath:config/hibernateConfig.properties"})
-@ComponentScan(basePackages={"edu.bsu.schedule.dao.impl.hibernate","edu.bsu.schedule.service.impl"})
+@PropertySource({
+        "classpath:config/databaseConfig.properties",
+        "classpath:config/hibernateConfig.properties"})
+@ComponentScan(basePackages={
+        "edu.bsu.schedule.databasemodule.dao.impl.hibernate",
+        "edu.bsu.schedule.databasemodule.service.impl"})
 public class ApplicationConfig {
     private final static Logger logger = LogManager.getLogger(ApplicationConfig.class);
     @Autowired
@@ -54,7 +58,7 @@ public class ApplicationConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(restDataSource());
-        sessionFactory.setPackagesToScan(new String[] { "edu.bsu.schedule.entity" });
+        sessionFactory.setPackagesToScan(new String[] { "edu.bsu.schedule.databasemodule.entity.orm" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
